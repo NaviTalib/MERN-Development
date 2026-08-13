@@ -119,7 +119,49 @@
 
 
 // promsie chaining
-Promise.resolve(10)
-  .then(value => value * 2) // 100
-  .then(value => value + 5)  // 105
-  .then(value => console.log(value)); // Logs: 105
+// Promise.resolve(10)
+//   .then(value => value * 2) // 100
+//   .then(value => value + 5)  // 105
+//   .then(value => console.log(value)); // Logs: 105
+
+
+//The async keyword
+//  When you put async before a function: 
+// The function always returns a Promise.
+
+
+
+// async function hello(){
+//   return "Hello";
+// }
+
+// const result = hello();
+// console.log(result);
+
+
+// // handling using then
+// hello().then((result)=>{
+//   console.log(result);
+// })
+
+
+// The await keyword
+// await is used to wait for a Promise to settle.
+
+function getData(){
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve("");
+    },2000);
+  });
+}
+
+async function main(){
+  const data = await getData();
+  console.log("A");
+  console.log(data);
+  console.log("B");
+}
+
+main();
+console.log("C");
