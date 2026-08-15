@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            
+
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: aqua;
+            padding: 100px;
+        }
+
+        h1 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: navy;
+            font-size: 50px;
+        }
+
+        p,
+        th,
+        td,
+        li {
+            font-size: 18px;
+        }
+        img{
+            width: 100%;
+        }
+        h2{
+            text-align: left;
+        }
+        h1,h2,img,ol,ul{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>What is MERN Stack?</h1>
+    <p>The MERN stack is a popular collection of JavaScript-based technologies used to build full-stack web
+        applications. It allows developers to construct both the front-end user interface and the back-end server
+        architecture using a single programming language: JavaScript.</p>
+    
+    <img src="MERN.png" alt="MERN" srcset="">
+    <h2>Core Components</h2>
+    <table>
+        <tr>
+            <th>Component</th>
+            <th>Technology</th>
+            <th>Type</th>
+            <th>Primary Role</th>
+        </tr>
+        <tr>
+            <th>M</th>
+            <td>MongoDB</td>
+            <td>NoSQL</td>
+            <td>Stores application data as JSON-like documents (BSON).</td>
+        </tr>
+        <tr>
+            <th>E</th>
+            <td>Express.js</td>
+            <td>Web Framework</td>
+            <td>Server-side framework for Node.js that handles routing and HTTP requests.</td>
+        </tr>
+        <tr>
+            <th>R</th>
+            <td>React.js</td>
+            <td>Front-End Library</td>
+            <td>Component-based UI library for rendering dynamic client-side user interfaces.</td>
+        </tr>
+        <tr>
+            <th>N</th>
+            <td>Node.js</td>
+            <td>Runtime Environment</td>
+            <td>Executes JavaScript on the server side, outside of the browser.</td>
+        </tr>
+    </table>
+    <div class="row"><h2>Architecture & Data Flow</h2>
+    <ol>
+        <li><strong>Client Layer (React):</strong> The user interacts with the React interface in their browser.</li>
+        <li><strong>API Request Layer (Express + Node):</strong> React sends asynchronous HTTP requests (via REST APIs
+            or GraphQL) to the Node.js runtime running the Express web server.</li>
+        <li><strong>Database Layer (MongoDB):</strong> Express processes the business logic, retrieves or updates data
+            in MongoDB, and returns JSON responses back to the React front end.</li>
+    </ol></div>
+    <h2>Key Advantages</h2>
+    <ul>
+        <li><strong>Single-Language Ecosystem:</strong> Writing both client-side and server-side code in JavaScript
+            reduces context switching and speeds up development.</li>
+        <li><strong>Component-Driven UI:</strong> React's virtual DOM allows for efficient UI updates without full page
+            reloads (Single Page Applications / SPAs).</li>
+        <li><strong>JSON End-to-End:</strong> Data flows natively as JSON objects across MongoDB, Express, and React,
+            eliminating complex data mapping.</li>
+        <li><strong>High Performance:</strong> Node.js uses an asynchronous, event-driven architecture designed to
+            handle concurrent non-blocking I/O operations.</li>
+    </ul>
+    </div>
+</body>
+
+</html>
