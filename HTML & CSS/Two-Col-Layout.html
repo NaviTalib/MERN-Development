@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Column Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-content {
+            float: right;
+            width: 70%;
+            padding-right: 20px;
+            height: 100vh;
+            background-color: green;
+        }
+
+        .sidebar {
+            float: left;
+            width: 30%;
+            height: 100vh;
+            background-color: red;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media (max-width:768px) {
+
+            .main-content,
+            .sidebar {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container clearfix">
+        <aside class="sidebar">Sidebar (30%)</aside>
+        <main class="main-content">Main Content (70%)</main>
+    </div>
+</body>
+
+</html>
