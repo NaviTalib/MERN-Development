@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Box Model</title>
     <style>
-        *,*::before,*::after{
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
-        .card{
+
+        .card {
             width: 300px;
             margin: 40px auto;
             padding: 24px;
@@ -16,15 +20,17 @@
             background-color: #f8fafc;
             border-radius: 8px;
         }
-        .badge{
+
+        .badge {
             display: inline-block;
             padding: 4px 12px;
             margin-bottom: 12px;
             border: 1px solid #1d4ed8;
-  background-color: #dbeafe;
+            background-color: #dbeafe;
         }
     </style>
 </head>
+
 <body>
 
     <div class="card">
@@ -32,6 +38,7 @@
         <h2 class="title">Box Model Demo</h2>
         <p class="content">Adjust padding and border without breaking the 300px total container width.</p>
     </div>
-    
+
 </body>
+
 </html>
