@@ -1,111 +1,212 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is MERN Stack?</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
-        body {
-            
 
-        }
-        div{
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: aqua;
-            padding: 100px;
+        }
+
+        .container {
+            max-width: 840px;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
         }
 
         h1 {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            color: navy;
-            font-size: 50px;
+            color: #0f172a;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.025em;
         }
 
-        p,
-        th,
-        td,
-        li {
-            font-size: 18px;
+        h2 {
+            color: #1e293b;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f1f5f9;
         }
-        img{
+
+        p {
+            font-size: 1rem;
+            color: #475569;
+            margin-bottom: 24px;
+        }
+
+        img {
             width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 16px 0 24px 0;
+            border: 1px solid #e2e8f0;
         }
-        h2{
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 16px;
             text-align: left;
+            border-bottom: 1px solid #e2e8f0;
         }
-        h1,h2,img,ol,ul{
-            margin-top: 10px;
+
+        th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        td:first-child, th:first-child {
+            font-weight: 700;
+            color: #2563eb;
+            text-align: center;
+            width: 50px;
+        }
+
+        /* Lists Styling */
+        ol, ul {
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        li strong {
+            color: #0f172a;
+        }
+
+        .section-box {
+            background-color: #f8fafc;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+            margin-top: 24px;
+        }
+
+        .section-box h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div>
+    <div class="container">
         <h1>What is MERN Stack?</h1>
-    <p>The MERN stack is a popular collection of JavaScript-based technologies used to build full-stack web
-        applications. It allows developers to construct both the front-end user interface and the back-end server
-        architecture using a single programming language: JavaScript.</p>
-    
-    <img src="MERN.png" alt="MERN" srcset="">
-    <h2>Core Components</h2>
-    <table>
-        <tr>
-            <th>Component</th>
-            <th>Technology</th>
-            <th>Type</th>
-            <th>Primary Role</th>
-        </tr>
-        <tr>
-            <th>M</th>
-            <td>MongoDB</td>
-            <td>NoSQL</td>
-            <td>Stores application data as JSON-like documents (BSON).</td>
-        </tr>
-        <tr>
-            <th>E</th>
-            <td>Express.js</td>
-            <td>Web Framework</td>
-            <td>Server-side framework for Node.js that handles routing and HTTP requests.</td>
-        </tr>
-        <tr>
-            <th>R</th>
-            <td>React.js</td>
-            <td>Front-End Library</td>
-            <td>Component-based UI library for rendering dynamic client-side user interfaces.</td>
-        </tr>
-        <tr>
-            <th>N</th>
-            <td>Node.js</td>
-            <td>Runtime Environment</td>
-            <td>Executes JavaScript on the server side, outside of the browser.</td>
-        </tr>
-    </table>
-    <div class="row"><h2>Architecture & Data Flow</h2>
-    <ol>
-        <li><strong>Client Layer (React):</strong> The user interacts with the React interface in their browser.</li>
-        <li><strong>API Request Layer (Express + Node):</strong> React sends asynchronous HTTP requests (via REST APIs
-            or GraphQL) to the Node.js runtime running the Express web server.</li>
-        <li><strong>Database Layer (MongoDB):</strong> Express processes the business logic, retrieves or updates data
-            in MongoDB, and returns JSON responses back to the React front end.</li>
-    </ol></div>
-    <h2>Key Advantages</h2>
-    <ul>
-        <li><strong>Single-Language Ecosystem:</strong> Writing both client-side and server-side code in JavaScript
-            reduces context switching and speeds up development.</li>
-        <li><strong>Component-Driven UI:</strong> React's virtual DOM allows for efficient UI updates without full page
-            reloads (Single Page Applications / SPAs).</li>
-        <li><strong>JSON End-to-End:</strong> Data flows natively as JSON objects across MongoDB, Express, and React,
-            eliminating complex data mapping.</li>
-        <li><strong>High Performance:</strong> Node.js uses an asynchronous, event-driven architecture designed to
-            handle concurrent non-blocking I/O operations.</li>
-    </ul>
+        <p>The MERN stack is a popular collection of JavaScript-based technologies used to build full-stack web
+            applications. It allows developers to construct both the front-end user interface and the back-end server
+            architecture using a single programming language: JavaScript.</p>
+
+        <img src="MERN.png" alt="MERN Stack Overview">
+
+        <h2>Core Components</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Component</th>
+                    <th>Type</th>
+                    <th>Primary Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>M</td>
+                    <td>MongoDB</td>
+                    <td>NoSQL</td>
+                    <td>Stores application data as JSON-like documents (BSON).</td>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td>Express.js</td>
+                    <td>Web Framework</td>
+                    <td>Server-side framework for Node.js that handles routing and HTTP requests.</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td>React.js</td>
+                    <td>Front-End Library</td>
+                    <td>Component-based UI library for rendering dynamic client-side user interfaces.</td>
+                </tr>
+                <tr>
+                    <td>N</td>
+                    <td>Node.js</td>
+                    <td>Runtime Environment</td>
+                    <td>Executes JavaScript on the server side, outside of the browser.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-box">
+            <h2>Architecture & Data Flow</h2>
+            <ol>
+                <li><strong>Client Layer (React):</strong> The user interacts with the React interface in their browser.</li>
+                <li><strong>API Request Layer (Express + Node):</strong> React sends asynchronous HTTP requests (via REST APIs or GraphQL) to the Node.js runtime running the Express web server.</li>
+                <li><strong>Database Layer (MongoDB):</strong> Express processes business logic, retrieves or updates data in MongoDB, and returns JSON responses back to the React front end.</li>
+            </ol>
+        </div>
+
+        <h2>Key Advantages</h2>
+        <ul>
+            <li><strong>Single-Language Ecosystem:</strong> Writing both client-side and server-side code in JavaScript reduces context switching and speeds up development.</li>
+            <li><strong>Component-Driven UI:</strong> React's virtual DOM allows for efficient UI updates without full page reloads (Single Page Applications / SPAs).</li>
+            <li><strong>JSON End-to-End:</strong> Data flows natively as JSON objects across MongoDB, Express, and React, eliminating complex data mapping.</li>
+            <li><strong>High Performance:</strong> Node.js uses an asynchronous, event-driven architecture designed to handle concurrent non-blocking I/O operations.</li>
+        </ul>
     </div>
 </body>
 
