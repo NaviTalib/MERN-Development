@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Profile Card</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        .card {
+            width: 400px;
+            height: 620px;
+            background-color: yellow;
+            margin: 40px auto;
+            display: flex;
+
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            border-radius:10px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 300px;
+
+        }
+
+        .social-stats {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .personal-info{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .btn{
+            padding: 1rem 2.5rem;
+            font-weight: bold;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 10px;
+
+        }
+        .btn:hover{
+            cursor: pointer;
+            background-color: yellowgreen;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="personal-info">
+            <img src="userImg.jpg" alt="UserImg">
+            <h1>Navicodes</h1>
+            <p>Web Developer, Noida, India</p>
+            <button class="btn">Follow</button>
+        </div>
+        <div class="social-stats">
+            <div class="stats-info">
+                <h2>450</h2>
+                <p>POST</p>
+            </div>
+            <div class="stats-info">
+                <h2>1285</h2>
+                <p>Followers</p>
+            </div>
+            <div class="stats-info">
+                <h2>300</h2>
+                <p>Following</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
