@@ -74,7 +74,8 @@
             font-size: 0.95rem;
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px 16px;
             text-align: left;
             border-bottom: 1px solid #e2e8f0;
@@ -90,7 +91,8 @@
             background-color: #f8fafc;
         }
 
-        td:first-child, th:first-child {
+        td:first-child,
+        th:first-child {
             font-weight: 700;
             color: #2563eb;
             text-align: center;
@@ -98,7 +100,8 @@
         }
 
         /* Lists Styling */
-        ol, ul {
+        ol,
+        ul {
             padding-left: 20px;
             margin-bottom: 24px;
         }
@@ -127,6 +130,15 @@
             padding-bottom: 0;
         }
 
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
         @media (max-width: 640px) {
             .container {
                 padding: 20px;
@@ -136,7 +148,8 @@
                 font-size: 1.75rem;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 8px 10px;
                 font-size: 0.85rem;
             }
@@ -194,19 +207,29 @@
         <div class="section-box">
             <h2>Architecture & Data Flow</h2>
             <ol>
-                <li><strong>Client Layer (React):</strong> The user interacts with the React interface in their browser.</li>
-                <li><strong>API Request Layer (Express + Node):</strong> React sends asynchronous HTTP requests (via REST APIs or GraphQL) to the Node.js runtime running the Express web server.</li>
-                <li><strong>Database Layer (MongoDB):</strong> Express processes business logic, retrieves or updates data in MongoDB, and returns JSON responses back to the React front end.</li>
+                <li><strong>Client Layer (React):</strong> The user interacts with the React interface in their browser.
+                </li>
+                <li><strong>API Request Layer (Express + Node):</strong> React sends asynchronous HTTP requests (via
+                    REST APIs or GraphQL) to the Node.js runtime running the Express web server.</li>
+                <li><strong>Database Layer (MongoDB):</strong> Express processes business logic, retrieves or updates
+                    data in MongoDB, and returns JSON responses back to the React front end.</li>
             </ol>
         </div>
 
         <h2>Key Advantages</h2>
         <ul>
-            <li><strong>Single-Language Ecosystem:</strong> Writing both client-side and server-side code in JavaScript reduces context switching and speeds up development.</li>
-            <li><strong>Component-Driven UI:</strong> React's virtual DOM allows for efficient UI updates without full page reloads (Single Page Applications / SPAs).</li>
-            <li><strong>JSON End-to-End:</strong> Data flows natively as JSON objects across MongoDB, Express, and React, eliminating complex data mapping.</li>
-            <li><strong>High Performance:</strong> Node.js uses an asynchronous, event-driven architecture designed to handle concurrent non-blocking I/O operations.</li>
+            <li><strong>Single-Language Ecosystem:</strong> Writing both client-side and server-side code in JavaScript
+                reduces context switching and speeds up development.</li>
+            <li><strong>Component-Driven UI:</strong> React's virtual DOM allows for efficient UI updates without full
+                page reloads (Single Page Applications / SPAs).</li>
+            <li><strong>JSON End-to-End:</strong> Data flows natively as JSON objects across MongoDB, Express, and
+                React, eliminating complex data mapping.</li>
+            <li><strong>High Performance:</strong> Node.js uses an asynchronous, event-driven architecture designed to
+                handle concurrent non-blocking I/O operations.</li>
         </ul>
+        <footer>
+            <p>&copy; <span id="year"></span> Navi Talib. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 
