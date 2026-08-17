@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Layout</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-layout {
+            display: grid;
+            /* 2 columns: 200px sidebar, remaining space for main */
+            grid-template-columns: 200px 1fr;
+            /* 3 rows: auto header height, 1fr main content, auto footer height */
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+            gap: 12px;
+
+            /* Visual blueprint of the layout */
+            grid-template-areas:
+                "header  header"
+                "sidebar main"
+                "footer  footer";
+        }
+
+        /* Assign elements to their named area */
+        .header {
+            grid-area: header;
+            background-color: #0f172a;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #e2e8f0;
+            padding: 1rem;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #ffffff;
+            padding: 1rem;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #0f172a;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        /* Responsive mobile view: stack all elements into 1 column */
+        @media (max-width: 600px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "sidebar"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-layout">
+        <header class="header">Header</header>
+        <aside class="sidebar">Sidebar</aside>
+        <main class="main">Main Content Area</main>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+
+</html>
