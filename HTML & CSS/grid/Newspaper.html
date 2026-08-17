@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #E9E5DC;
+            color: #1a1a1a;
+            font-family: 'Libre Baskerville', serif;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 1px solid #222;
+            padding: 20px;
+            background-color: #f4f1ea;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        /* HEADER SECTION */
+        .header {
+            text-align: center;
+        }
+
+        .date-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 8px 0;
+            border-top: 2px solid #222;
+            border-bottom: 1px solid #222;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .date-info span:nth-child(2) {
+            text-align: center;
+        }
+
+        .date-info span:nth-child(3) {
+            text-align: right;
+        }
+
+        .navbar {
+            padding: 20px 0;
+            border-bottom: 4px double #222;
+            margin-bottom: 15px;
+        }
+
+        .navbar h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .navbar p {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            margin-top: 8px;
+            font-weight: 700;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #222;
+            margin: 15px 0;
+        }
+
+        /* MAIN CONTENT & SIDEBAR GRID */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .main-content {
+            border-right: 1px solid #ccc;
+            padding-right: 25px;
+        }
+
+        .main-content img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            border: 1px solid #222;
+            margin-bottom: 15px;
+        }
+
+        .news h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .news h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .news > p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .news-partition {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            text-align: justify;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+            padding-top: 15px;
+        }
+
+        .news-partition span {
+            border-right: 1px dashed #ccc;
+            padding-right: 10px;
+        }
+
+        .news-partition span:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        /* SIDEBAR SECTION */
+        .sidebar-nav {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            border-bottom: 2px solid #222;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sidebar-section:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .sidebar-section img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            margin: 8px 0;
+            border: 1px solid #222;
+        }
+
+        .sidebar-section p {
+            font-size: 0.85rem;
+            text-align: justify;
+        }
+
+        /* FOOTER SECTION */
+        .footer {
+            border-top: 4px double #222;
+            padding-top: 15px;
+        }
+
+        .footer > h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+            padding-bottom: 5px;
+        }
+
+        .footer-news {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .news-card {
+            border-right: 1px solid #ccc;
+            padding-right: 15px;
+        }
+
+        .news-card:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .news-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .news-card p {
+            font-size: 0.8rem;
+        }
+
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid #222;
+                padding-bottom: 20px;
+            }
+
+            .news-partition,
+            .footer-news {
+                grid-template-columns: 1fr;
+            }
+
+            .news-partition span,
+            .news-card {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px dashed #ccc;
+                padding-bottom: 10px;
+            }
+
+            .navbar h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="date-info">
+                <span>VOL, CXLII, No 31,459</span>
+                <span>TUESDAY, AUGUST 18, 2026</span>
+                <span>TWO DOLLARS</span>
+            </div>
+            <div class="navbar">
+                <h1>THE GLOBAL CHRONICLE</h1>
+                <p>TRUTH. INTEGRITY. INSIGHT.</p>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <main class="main-content">
+                <img src="img placeholder.jpeg" alt="Climate Action Image">
+                <div class="news">
+                    <h1>BREAKING THROUGH IN CLIMATE</h1>
+                    <h2>ACTION: GLOBAL ACCORD REACHED</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vel?</p>
+                    <div class="news-partition">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, nam? Lorem ipsum dolor sit amet.</span>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, nam? Lorem ipsum dolor sit amet.</span>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, nam? Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-nav">
+                    <span>CITY & NATION</span>
+                    <span>WORLD NEWS</span>
+                </div>
+                <div class="sidebar-section">
+                    <h3>MAYOR ANNOUNCES HOUSING PLAN</h3>
+                    <img src="img placeholder.jpeg" alt="Housing Plan Image">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit velit eligendi consequatur vitae iusto dolore, et temporibus aperiam voluptas.</p>
+                </div>
+                <div class="sidebar-section">
+                    <h3>TECH GIANTS SUBPOENAED OVER PRIVACY</h3>
+                </div>
+                <div class="sidebar-section">
+                    <h3>LOCAL SCHOOLS FACE FUNDING CRISIS</h3>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="footer">
+            <h4>OPINION & ANALYSIS</h4>
+            <div class="footer-news">
+                <div class="news-card">
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, non.</p>
+                </div>
+                <div class="news-card">
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, non.</p>
+                </div>
+                <div class="news-card">
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, non.</p>
+                </div>
+                <div class="news-card">
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, non.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
